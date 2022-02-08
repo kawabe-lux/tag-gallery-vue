@@ -1,9 +1,25 @@
 <template>
   <ul class="gallery">
+    <photo-element
+      v-for="photo in photoSet"
+      :key="photo.id"
+      :tags="photo.tags"
+      :src="photo.src"
+    />
   </ul>
 </template>
 
-<script>
+<script setup>
+  import { computed } from 'vue'
+  import { useStore } from 'vuex'
+  import PhotoElement from './photo-element.vue'
+  const store = useStore()
+  store.dispatch('photos/load', null, { root: true })
+  const photoSet = computed (() => {
+    console.log(store.getters['photos/photoSet']);
+    return store.getters['photos/photoSet']
+  })
+
 </script>
 
 <style scoped>
