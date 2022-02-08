@@ -12,6 +12,7 @@ dist-ssr
 
 # IDE / Editor
 *.sublime-project
+*.sublime-workspace
 
 # macOS
 .DS_Store

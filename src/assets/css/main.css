@@ -51,6 +51,8 @@
     --image-filter-light: ;
     --font-weight-light: 400;
     --focus-color-light: #3689e6;
+    --warn-text-color-light: #fafafa;
+    --warn-background-color-light: #a10705;
 }
 
 /* theme dark */
@@ -64,6 +66,8 @@
     --image-filter-dark: brightness(.8) contrast(1.2);
     --font-weight-dark: 350;
     --focus-color-dark: #f9c440;
+    --warn-text-color-dark: #000;
+    --warn-background-color-dark: #c6262e;
 }
 
 /* apply theme light*/
@@ -78,6 +82,8 @@
     --image-filter: var(--image-filter-light);
     --font-weight: var(--font-weight-light);
     --focus-color: var(--focus-color-light);
+    --warn-text-color: var(--warn-text-color-light);
+    --warn-background-color: var(--warn-background-color-light);
 }
 
 /* apply theme dark */
@@ -92,6 +98,8 @@
         --image-filter: var(--image-filter-dark);
         --font-weight: var(--font-weight-dark);
         --focus-color: var(--focus-color-dark);
+        --warn-text-color: var(--warn-text-color-dark);
+        --warn-background-color: var(--warn-background-color-dark);
     }
 }
 
@@ -105,6 +113,8 @@
     --image-filter: var(--image-filter-dark);
     --font-weight: var(--font-weight-dark);
     --focus-color: var(--focus-color-dark);
+    --warn-text-color: var(--warn-text-color-dark);
+    --warn-background-color: var(--warn-background-color-dark);
 }
 
 /* global colors */
