@@ -1,0 +1,341 @@
+/* lengths and sizes */
+/* ----------------- */
+
+/* dimension */
+:root{
+    --button-border-width: 0.15rem;
+    --button-border-width-big: 0.2rem;
+    --range-height: 0.7rem;
+    --input-max-width: 30rem;
+    --layout-border-width: 0.15rem;
+    --interactives-border-width: var(--button-border-width);
+}
+
+/* font and text settings */
+:root{
+    --text-font: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --titles-font: var(--text-font);
+    --code-font: "Consolas", "Roboto Mono", "Ubuntu Monospace", "Menlo", "Noto Mono", "Oxygen Mono", "Liberation Mono", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --base-font-size: 1.2rem;
+    --font-size: 1em;
+    --line-height: 1.3em;
+}
+
+/* spacing */
+:root{
+    --typography-spacing: 1.5em;
+    --figure-margin: 1em 1em;
+    --figure-margin-landscape: 1em 2.5em;
+}
+
+/* build */
+
+:root{
+    --left-margin: 5rem;
+    --content-margin-left: 2em;
+    --content-margin-top: 1em;
+    --content-margin-bottom: 5em;
+}
+
+/* color scheme */
+/* ------------ */
+
+/* theme light */
+:root{
+    --text-color-light:#273445;
+    --border-color-light: var(--text-color);
+    --background-color-light: #fafafa;
+    --inner-background-color-light: #d4d4d4;
+    --shadow-color-light: #273445;
+    --light-color-light: #efede7;
+    --image-filter-light: ;
+    --font-weight-light: 400;
+    --focus-color-light: #3689e6;
+}
+
+/* theme dark */
+:root{
+    --text-color-dark:#EBEBEB;
+    --border-color-dark:#abacae;
+    --background-color-dark: #333333;
+    --inner-background-color-dark: #1a1a1a;
+    --shadow-color-dark: #000;
+    --light-color-dark: #202020;
+    --image-filter-dark: brightness(.8) contrast(1.2);
+    --font-weight-dark: 350;
+    --focus-color-dark: #f9c440;
+}
+
+/* apply theme light*/
+:root:not([theme=dark]),
+[theme=light] {
+    --text-color: var(--text-color-light);
+    --border-color: var(--border-color-light);
+    --background-color: var(--background-color-light);
+    --inner-background-color: var(--inner-background-color-light);
+    --shadow-color: var(--shadow-color-light);
+    --light-color: var(--light-color-light);
+    --image-filter: var(--image-filter-light);
+    --font-weight: var(--font-weight-light);
+    --focus-color: var(--focus-color-light);
+}
+
+/* apply theme dark */
+@media only screen and (prefers-color-scheme:dark) {
+    :root:not([theme=light]) {
+        --text-color: var(--text-color-dark);
+        --border-color: var(--border-color-dark);
+        --background-color: var(--background-color-dark);
+        --inner-background-color: var(--inner-background-color-dark);
+        --shadow-color: var(--shadow-color-dark);
+        --light-color: var(--light-color-dark);
+        --image-filter: var(--image-filter-dark);
+        --font-weight: var(--font-weight-dark);
+        --focus-color: var(--focus-color-dark);
+    }
+}
+
+[theme=dark] {
+    --text-color: var(--text-color-dark);
+    --border-color: var(--border-color-dark);
+    --background-color: var(--background-color-dark);
+    --inner-background-color: var(--inner-background-color-dark);
+    --shadow-color: var(--shadow-color-dark);
+    --light-color: var(--light-color-dark);
+    --image-filter: var(--image-filter-dark);
+    --font-weight: var(--font-weight-dark);
+    --focus-color: var(--focus-color-dark);
+}
+
+/* global colors */
+:root {
+    color-scheme: light dark;
+    --drop-shadow-outside: -2.5px -2.5px 20px -5px var(--light-color), 2.5px 2.5px 20px -5px var(--shadow-color);
+    --drop-shadow-inside: inset 1.5px 1.5px 5px -2px var(--shadow-color), inset -2.5px -2.5px 5px var(--light-color);
+}
+
+:focus{
+    outline-style: solid;
+    outline-color: var(--focus-color);
+    outline-width: 0.2rem;
+}
+::selection{
+    color: var(--background-color);
+    background-color: var(--text-color);
+}
+
+/* general elements */
+/* ================ */
+
+/* general */
+/* ------- */
+
+html{
+    font-size: var(--font-size);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--text-font);
+    font-weight: var(--font-weight);
+}
+
+/* browser consistency */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+    display: block;
+}
+button,
+input {
+    overflow: visible;
+    cursor: pointer;
+}
+button,
+select {
+    text-transform: none;
+}
+[type="search"] {
+    -webkit-appearance: textfield;
+}
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+::-webkit-input-placeholder {
+    color: inherit;
+    opacity: 0.54;
+}
+
+/* make clickable items styleable in mobile browsers */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+    -webkit-appearance: button;
+}
+::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    font: inherit;
+}
+
+/* hide SVG overflow in IE. */
+svg:not(:root) {
+    overflow: hidden;
+}
+
+
+/* content */
+/* ------- */
+
+a[href]{
+    color: var(--text-color);
+    text-decoration: underline;
+    text-underline-position: under;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0.1em;
+    text-decoration-color: var(--text-color);
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-property: text-decoration-color, text-decoration-thickness, outline;
+}
+a[href]:hover{
+    text-decoration-color: var(--focus-color);
+    text-decoration-thickness: 0.2em;
+}
+a[href]>img,
+a[href]>svg{
+    width: 1.3ch;
+    display: inline;
+    margin: 0;
+}
+a[href]>svg{
+    fill: var(--text-color);
+}
+
+a[href].ic{
+    display: inline-block;
+    padding-right: 1.3ch;
+}
+a[href].ic>svg{
+    display: inline-block;
+    width: 1.3ch;
+    height: 1.3ch;
+    margin-right: -1.3ch;
+
+}
+
+/* headlines */
+
+h2+a[href]{
+    position: relative;
+    top: -0.7em;
+}
+
+h3{
+    margin-bottom: 0em;
+}
+h3+p{
+    margin-top: 0.2em;
+}
+
+/* rest */
+
+p{
+    line-height: 1.4em;
+}
+p:last-child{
+    margin-bottom: 0;
+}
+
+address{
+    display: inline-block;
+    padding: 0.5em 0.8em;
+    font-style: normal;
+    line-height: 1.5em;
+}
+
+/* media */
+/* ----- */
+
+/* IE 10- fix */
+img,
+svg,
+audio,
+canvas,
+progress {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+    border-style: none;
+}
+
+img,
+iframe{
+    border:none;
+}
+
+embed,
+object,
+video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+figure img, figure video {
+    filter: var(--image-filter);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* disable animations for accessibility reasons (with tiny duration to keep JS-event listeners intact */
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+/* buttons, switches, etc. */
+/* ----------------------- */
+
+button{
+    color: var(--background-color);
+    background-color: var(--text-color);
+    border: solid var(--interactives-border-width) var(--border-color);
+    border-radius: var(--interactives-border-width);
+    padding: 1.2em;
+    justify-self: left;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: calc(0.75*var(--font-size));
+    font-family: var(--text-font);;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-property: box-shadow, outline;
+    margin-bottom: var(--typography-spacing);
+    margin-right: 1em;
+    width: auto;
+}
+button:hover{
+    box-shadow: 2px 2px var(--focus-color);
+}
+
+button svg,
+button img{
+    width: unset;
+    height: 100%;
+    display: inline-block;
+    height: 1.5em;
+}
