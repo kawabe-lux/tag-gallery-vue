@@ -1,0 +1,1129 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"la",
+				"lang"
+			],
+			[
+				"script",
+				"script"
+			],
+			[
+				"vue",
+				"vuec"
+			],
+			[
+				"pre",
+				"prevent"
+			],
+			[
+				"form",
+				"form"
+			],
+			[
+				"p",
+				"p"
+			],
+			[
+				"crea",
+				"createWebHistory"
+			],
+			[
+				"cre",
+				"createRouter"
+			],
+			[
+				"histo",
+				"History"
+			],
+			[
+				"--fon",
+				"--font-weight"
+			],
+			[
+				"color",
+				"color-scheme"
+			],
+			[
+				"sroll",
+				"scroll-margin-top"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"a",
+				"a"
+			],
+			[
+				"text-decoration-",
+				"text-decoration-style"
+			],
+			[
+				"doc-",
+				"doc-footnote"
+			],
+			[
+				"--f",
+				"--focus-color"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"fn",
+				"fnref01"
+			],
+			[
+				"transi",
+				"transition-duration"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"tran",
+				"transition-property"
+			],
+			[
+				"--text",
+				"--text-color"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"background",
+				"background-size"
+			],
+			[
+				"--bg",
+				"--bg-pattern-light"
+			],
+			[
+				"se",
+				"section"
+			],
+			[
+				"anim",
+				"animation-duration"
+			],
+			[
+				"box",
+				"box-sizing"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
+				"role",
+				"role=\"switch"
+			],
+			[
+				"aria",
+				"aria-selected"
+			],
+			[
+				"li",
+				"li"
+			],
+			[
+				"--fo",
+				"--font-size"
+			],
+			[
+				"sli",
+				"sliderWrapper"
+			],
+			[
+				"fig",
+				"figcaption"
+			],
+			[
+				"consol",
+				"console.log"
+			],
+			[
+				"sld",
+				"slider"
+			],
+			[
+				"lan",
+				"language-label"
+			],
+			[
+				"Durch",
+				"Durchmesser"
+			],
+			[
+				"Fehl",
+				"Fehlschlag"
+			],
+			[
+				"v",
+				"v_xsoll"
+			],
+			[
+				"D",
+				"D_i"
+			],
+			[
+				"F_",
+				"F_r"
+			],
+			[
+				"alpha",
+				"alpha_0"
+			],
+			[
+				"x",
+				"i_x_R"
+			],
+			[
+				"antr",
+				"antriebdat"
+			],
+			[
+				"cy",
+				"cylinder"
+			],
+			[
+				"D_",
+				"D_Sr1"
+			],
+			[
+				"Lagerung",
+				"Lagerungsgeometrien"
+			],
+			[
+				"Trag",
+				"Tragfähigkeit"
+			],
+			[
+				"open",
+				"openSCAD_Lager"
+			],
+			[
+				"Rillen",
+				"Rillenkugellager"
+			],
+			[
+				"tr",
+				"translate"
+			],
+			[
+				"B_",
+				"B_LSr"
+			],
+			[
+				"rolle",
+				"rollenaussendurchmesser"
+			],
+			[
+				"ci",
+				"cylinder"
+			],
+			[
+				"ro",
+				"rollenhoehe"
+			],
+			[
+				"rollen",
+				"rollenaussendurchmesser"
+			],
+			[
+				"is",
+				"isempty"
+			],
+			[
+				"file",
+				"fileID"
+			],
+			[
+				"seite",
+				"seite_b"
+			],
+			[
+				"sei",
+				"seite_b"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"anza",
+				"anzahl.y"
+			],
+			[
+				"anz",
+				"anzahl.x"
+			],
+			[
+				"an",
+				"anzahl.y"
+			],
+			[
+				"y",
+				"y_lochdistanz"
+			],
+			[
+				"pla",
+				"platte.z"
+			],
+			[
+				"ra",
+				"randabstand"
+			],
+			[
+				"bohr",
+				"bohrloch_durchmesser"
+			],
+			[
+				"bo",
+				"bohrloch_durchmesser"
+			],
+			[
+				"pl",
+				"platte"
+			],
+			[
+				"korre",
+				"korrekturfaktor"
+			],
+			[
+				"korrekt",
+				"korrekturwert"
+			],
+			[
+				"i_",
+				"i_LaufruheanforderungZr"
+			],
+			[
+				"F_L",
+				"F_LSr2"
+			],
+			[
+				"L_2",
+				"L_2Sr"
+			],
+			[
+				"F_Sr",
+				"F_Srmax"
+			],
+			[
+				"L_",
+				"L_1Sr"
+			],
+			[
+				"gro",
+				"groessenabfrage"
+			],
+			[
+				"margin-",
+				"margin-bottom\tproperty"
+			],
+			[
+				"F_Zr",
+				"F_Zrmax"
+			],
+			[
+				"if",
+				"ifeif\tif … elseif … end"
+			],
+			[
+				"D_S",
+				"D_Sr1"
+			],
+			[
+				"str_Zr",
+				"str_ZrLaufruheanforderung"
+			],
+			[
+				"Gesam",
+				"Gesamtkonzepte"
+			],
+			[
+				"co",
+				"console.log"
+			],
+			[
+				"erla",
+				"erlaubnisfenster"
+			],
+			[
+				"f",
+				"f\tAnonymous Function"
+			],
+			[
+				"onc",
+				"onclick"
+			],
+			[
+				"Devi",
+				"DeviceOrientationEvent"
+			],
+			[
+				"conslo",
+				"console.log(\"resize"
+			],
+			[
+				"border",
+				"border-box\tbox-sizing"
+			],
+			[
+				"var",
+				"var(--h1o1"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"T_",
+				"T_23_gam"
+			],
+			[
+				"i",
+				"i_max"
+			],
+			[
+				"CA",
+				"CATS_DIR"
+			],
+			[
+				"al_k",
+				"asl_k"
+			],
+			[
+				"asm",
+				"asm_s"
+			],
+			[
+				"as_",
+				"as_beta_0"
+			],
+			[
+				"z_N",
+				"z_NCMLS_VMODALA_staAn"
+			],
+			[
+				"z_NV",
+				"z_NCMIT_VMODALA_staAn"
+			],
+			[
+				"z_VMODALA",
+				"z_cpu_VMODALA_staAn"
+			],
+			[
+				"z_V",
+				"z_cpu_VMODALA"
+			],
+			[
+				"z_IV",
+				"z_cpu_IVRANDB"
+			],
+			[
+				"z_c",
+				"z_cpu_IIGEOME"
+			],
+			[
+				"z_cpu_I",
+				"z_cpu_IVORDEF"
+			],
+			[
+				"z_",
+				"z_cpu_VIISTIN"
+			],
+			[
+				"asd_",
+				"asd_w"
+			],
+			[
+				"a__b",
+				"a__beta_L"
+			],
+			[
+				"asd",
+				"asd_w"
+			],
+			[
+				"mc_",
+				"mc_sns"
+			],
+			[
+				"Zo",
+				"ZoFzA"
+			],
+			[
+				"gaIIb",
+				"gaIIbBlk1"
+			],
+			[
+				"T",
+				"TYPE"
+			],
+			[
+				"hoe",
+				"aHoehe1"
+			],
+			[
+				"NONE",
+				"NONE"
+			],
+			[
+				"gkS",
+				"gkSBlk1"
+			],
+			[
+				"NSL",
+				"NSLA"
+			],
+			[
+				"gaI",
+				"gaIb"
+			],
+			[
+				"B",
+				"gaII1Blk1"
+			],
+			[
+				"ar",
+				"ArGgn"
+			],
+			[
+				"ga",
+				"gaIIbBlk2"
+			],
+			[
+				"gaII",
+				"gaIIbBlk2"
+			],
+			[
+				"Blk",
+				"gaIIbBlk1"
+			],
+			[
+				"akk",
+				"akk_Tx"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 127.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"fix",
+				"ESLint Fix: Fix this file"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"rename",
+				"Rename File"
+			],
+			[
+				"move",
+				"File: Move"
+			],
+			[
+				"inden",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"align",
+				"Rainbow CSV: Align CSV columns with spaces"
+			],
+			[
+				"rainbow",
+				"Set Syntax: TSV (Rainbow)"
+			],
+			[
+				"ss csv",
+				"Set Syntax: CSV (Rainbow)"
+			],
+			[
+				"ssm",
+				"Set Syntax: Markdown"
+			],
+			[
+				"ss jav",
+				"Set Syntax: Java Properties"
+			],
+			[
+				"ss json",
+				"Set Syntax: JSON"
+			],
+			[
+				"ss js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ss htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"HTML",
+				"StringEncode: HTML Entitize"
+			],
+			[
+				"html",
+				"StringEncode: HTML Entitize"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"ssj",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"ssjas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"lorem",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"open in br",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"Snippet: ",
+				"Snippet: create markdeep footer"
+			],
+			[
+				"mark under",
+				"MarkdownEditing: Fix Underlined Headers"
+			],
+			[
+				"che",
+				"LaTeXTools: Check system"
+			],
+			[
+				"LaTeXTo",
+				"LaTeXTools: View TeX package documentation"
+			],
+			[
+				"ch",
+				"LaTeXTools: Check system"
+			],
+			[
+				"check",
+				"LaTeXTools: Check system"
+			],
+			[
+				"La",
+				"LaTeXTools: Check system"
+			],
+			[
+				"snipp",
+				"Snippet: markdeep_footer"
+			],
+			[
+				"markdown ht",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"",
+				"Markdeep: Open documentation"
+			],
+			[
+				"merma",
+				"Mermaid: View In Browser"
+			],
+			[
+				"ssmar",
+				"Set Syntax: Markdown"
+			],
+			[
+				"ssmer",
+				"Set Syntax: Mermaid"
+			],
+			[
+				"ssme",
+				"Set Syntax: Mermaid"
+			],
+			[
+				"MATLAB",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"ssmat",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"ssbash",
+				"Set Syntax: Bourne Again Shell (bash)"
+			],
+			[
+				"ssop",
+				"Set Syntax: OpenScad"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"ssmatl",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"ssjson",
+				"Set Syntax: JSON"
+			],
+			[
+				"mark ima",
+				"MarkdownImages: Show All Images"
+			],
+			[
+				"markdown image",
+				"MarkdownImages: Show All Images"
+			],
+			[
+				"mark",
+				"MarkdownEditing: Change color scheme..."
+			],
+			[
+				"ss",
+				"Set Syntax: Markdown"
+			],
+			[
+				"Tra",
+				"Transcrypt::Decrypt"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"f",
+				"MarkdownEditing: Fix Underlined Headers"
+			],
+			[
+				"sa",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"sav",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"save",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"save Mark",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"markdown HT",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"markPre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdown",
+				"MarkdownEditing: Fix Underlined Headers"
+			],
+			[
+				"ref",
+				"MarkdownEditing: New Reference"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"mermaid",
+				"Mermaid: View In Browser"
+			],
+			[
+				"ssapd",
+				"Set Syntax: APDL (ANSYS)"
+			],
+			[
+				"m",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"ssymar",
+				"Set Syntax: Markdown"
+			],
+			[
+				"fold",
+				"MarkdownEditing: Fold Level 3 Sections"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"MarkdownEditing",
+				"MarkdownEditing: Change color scheme..."
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"package In",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: I",
+				"Package Control: Install Package"
+			],
+			[
+				"Pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 186.0,
+		"history":
+		[
+			"ls",
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/gerhardkawabelux/Repos/vite-app/node_modules/typescript/lib/lib.dom.d.ts",
+		"/home/gerhardkawabelux/Repos/vite-app/node_modules/vuex/types/index.d.ts",
+		"/home/gerhardkawabelux/Repos/vite-app/node_modules/@vue/reactivity/dist/reactivity.d.ts",
+		"/home/gerhardkawabelux/Repos/vite-app/.eslintrc.js",
+		"/home/gerhardkawabelux/Repos/vite-app/src/store/modules/user.ts",
+		"/home/gerhardkawabelux/.config/sublime-text/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Jobsuche.md.html",
+		"/home/gerhardkawabelux/Nextcloud/Papierkram/Accounts.md",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard/Sublime Text.md",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard/Wochenplan.csv",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard/Wochenplan.tsv",
+		"/home/gerhardkawabelux/.bashrc",
+		"/home/gerhardkawabelux/Nextcloud/Haus/Grundstück/GymnasienRP.csv",
+		"/home/gerhardkawabelux/Nextcloud/Haus/Grundstück/GrundschulenRP.csv",
+		"/home/gerhardkawabelux/Nextcloud/Haus/Grundstück/Gegenderkundung.md",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard/elementary/elementary OS.md",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/index.html",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/snippets.html",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/about.html",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/assets/style.css",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/img/external_link.svg",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/img/pattern_snippets.svg",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/assets/patterns.svg",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/img/pattern_projects.svg",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/img/pattern_projects_light.svg",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/assets/tabs.js",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/assets/slider.js",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/snippets/dual-language-switch/language_switch.js",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/assets/tabs.css",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/assets/script.js",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/assets/slider.css",
+		"/home/gerhardkawabelux/Repos/kawabe-lux_web/Jenkinsfile",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Bewerbung/celebrate/Frontend Developer (m_w_d) - celebrate company GmbH.html",
+		"/home/gerhardkawabelux/Repos/kawabe-lux_web/.git/COMMIT_EDITMSG",
+		"/home/gerhardkawabelux/.gitconfig",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Weiterbildung/Inclusive_Components_–_Notizen.md.html",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/img/pattern_about.svg",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/img/pattern_about_light.svg",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/assets/js-only.css",
+		"/home/gerhardkawabelux/Nextcloud/Musik/O Tannenbaum.txt",
+		"/home/gerhardkawabelux/Nextcloud/Musik/Liedtexte/Schneeflöckchen Weißröckchen.md",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Webseite/img/corner-right-up.svg",
+		"/home/gerhardkawabelux/Nextcloud/Gerhard_Job/Bewerbung/celebrate/Behavioral Report.md",
+		"/Users/kawabe-lux/Nextcloud/Gerhard_Job/web-dev-stellenanzeigen.txt",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/img/moon.svg",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/img/circle.svg",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/img/arrow-right.svg",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/img/pattern_snippets_light.svg",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/standard.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/haupt.js",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/snippets/dual-language-switch/example.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/img/pattern_projects.svg",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/Orga/Werke.json",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Orga/Werke.json",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/app.html",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/service-worker_v05.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/Orga/Autor/arthurAchleitner.json",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/Orga/sort/Titel.json",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/Orga/sort/Autor.json",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/Orga/sort/Interpret.json",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/Orga/Werke_v06.json",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/Orga/werkExp.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Orga/Werke.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/MetaGeneratorTitelliste.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/MetaGeneratorWerk.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/Build/Orga/Werk/amadeusKnoedelseder.html",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/Build/standard.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/Bekannte Probleme.txt",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/ziel.html",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/Orga/system-runtime.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/MetaGeneratorWorkbox.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/MetaGeneratorAutor.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/Code/haupt.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/node_modules/hyphenopoly/Hyphenopoly_Loader.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/meinerstes.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/nod.js",
+		"/media/kawabe-lux/My Book/Projekte/Web/UndLesen/nj/package-lock.json",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/assets/prism.css",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Weiterbildung/Inclusive_Components_–_Notizen.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Lebenslauf/lebenslauf.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/content.md.html",
+		"/home/kawabe-lux/Repos/adcs-hil-documentation/Kapitel/4. System Level/4.2 System_Design.tex",
+		"/home/kawabe-lux/Repos/adcs-hil-documentation/Kapitel/4. System Level/4.3 System_Implementation.tex",
+		"/home/kawabe-lux/Repos/adcs-hil-documentation/Kapitel/5. Component Level/5.3 Sensors.tex",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Jobsuche.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/assets/prism.js",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/index.html",
+		"/media/kawabe-lux/Daten/Nextcloud/In Arbeit/20201204_carousel/carousel.html",
+		"/media/kawabe-lux/Daten/Nextcloud/In Arbeit/20201204_carousel/assets/slider.js",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/assets/slider.js",
+		"/media/kawabe-lux/Daten/Nextcloud/In Arbeit/20201204_carousel/assets/js-only.css",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/assets/js-only.css",
+		"/home/kawabe-lux/Repos/adcs-hil-framework/.gitignore",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/style.css",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/script.js",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Webseite/img/sun.svg",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/markdeep.md.html",
+		"/home/kawabe-lux/.config/sublime-text/Packages/User/markDeepFooter.sublime-snippet",
+		"/media/kawabe-lux/Daten/Nextcloud/Papierkram/Accounts.md",
+		"/media/kawabe-lux/Daten/Nextcloud/Kinder/Lelias Vorschule/210531_Woche_13/210531_Padlet.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/web-dev_portfoliokonzept.txt",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/web-dev-anforderungen-notizen.txt",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/Sublime Text.md",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard_Job/Inclusive Components – Notizen.md",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/_Studium/__ADP2/General/2_Meetings/KW 21 24.05-30.05/GitlabCrashCourse/20210517_Agenda_KW20.md.html",
+		"/home/kawabe-lux/.var/app/com.sublimetext.three/config/sublime-text-3/Packages/User/LaTeXTools.sublime-settings",
+		"/home/kawabe-lux/Dokumente/LaTeX/LaTeX-Vorlage/ADP - ADCS Framework/ADP - ADCS Framework.tex",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/_Studium/__ADP2/Gitlab/git_win10_installation.md.html",
+		"/home/kawabe-lux/.var/app/com.sublimetext.three/config/sublime-text-3/Packages/User/Markdown (Standard).sublime-settings",
+		"/home/kawabe-lux/.var/app/com.sublimetext.three/config/sublime-text-3/Packages/LaTeXTools/README.markdown",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/_Studium/__ADP2/MagnetometerRecherche/210525_Recherche_zu_ARM-Magnetometern_fuer_Satelliten.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/_Studium/__ADP2/MagnetometerRecherche/210521_Recherche_zu_Hall-Magnetometern_fuer_Satelliten.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/_Studium/__ADP2/Allgemeine_Notizen/210521_Recherche_zu_Hall-Magnetometern_fuer_Satelliten.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/_Studium/__ADP2/MagnetometerRecherche/Sensors - December 1998 - A New Perspective on Magnetic Field Sensing.htm",
+		"/media/kawabe-lux/Daten/Nextcloud/Kinder/Lelias Vorschule/210524_Woche_12/210524_Lesehausaufgabe.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/Kennenzulernende Musik.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Kinder/Lelias Vorschule/210517_Lehrplan.md.html",
+		"/home/kawabe-lux/.var/app/com.sublimetext.three/config/sublime-text-3/Packages/User/markdeep_footer.sublime-snippet",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/_Studium/__ADP2/Allgemeine_Notizen/20210517_Gruppenmeeting/20210517_Agenda_KW20.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/_Studium/__ADP2/Allgemeine_Notizen/210520_ProjectReview.md",
+		"/media/kawabe-lux/Daten/Nextcloud/In Arbeit/PXI Soundlogo.md",
+		"/media/kawabe-lux/Daten/Nextcloud/Kinder/Lelias Vorschule/210517_Woche_11/210517_Lesehausaufgabe.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Kinder/Lelias Vorschule/210517_Woche_11/210517_Padlet.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Kinder/Lelias Vorschule/210510_Woche_10/210510_Lesehausaufgabe.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Kinder/Lelias Vorschule/210315_Woche_4/210315_Lesehausaufgabe.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Kinder/Lelias Vorschule/210510_Woche_10/210510_Padlet.md.html",
+		"/media/kawabe-lux/Daten/Nextcloud/Gerhard/_Studium/__ADP/201116_Entwicklungsmethodik/Zeitplan.mermaid",
+		"/home/kawabe-lux/HESSENBOX-DA/ADP (Tim Kötting)/05 Ausarbeitung/Entwuerfe/3_Vorgehensweise_Methodik/Vorgehensweise – Methodik.md.html"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 136.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 37.0
+	},
+	"input":
+	{
+		"height": 49.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.SublimeLinter":
+	{
+		"height": 0.0
+	},
+	"output.diagnostics":
+	{
+		"height": 186.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 181.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "tag-gallery.sublime-project",
+	"replace":
+	{
+		"height": 70.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Nextcloud/Gerhard/Wochenplan.csv"
+			],
+			[
+				"stellen",
+				"web-dev-stellenanzeigen.md"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"~/Nextcloud/Gerhard_Job/Job.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 334.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 271.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}

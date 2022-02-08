@@ -1,0 +1,20 @@
+# Dependency directories
+node_modules/
+
+# Vite generate
+dist
+dist-ssr
+*.local
+
+
+# Output of 'npm pack'
+*.tgz
+
+# IDE / Editor
+*.sublime-project
+
+# macOS
+.DS_Store
+
+# Vim swap files
+*.swp
