@@ -25,12 +25,17 @@ export default{
             state.byId[photoId].tags.push(tagName);
         },
         removeTag: (state, {photoId: photoId, tagName: tagName}) => {
-            if (state.byId[photoId].tagsByName.hasOwnProperty(tagName) !== true) {return};
+            if (state.byId[photoId].tagsByName.hasOwnProperty(tagName) !== true) return;
             state.byId[photoId].tags.splice(state.byId[photoId].tags.indexOf(tagName), 1);
             // const array = state.byId[photoId].tags;
             // const index = state.byId[photoId].tags.indexOf(tagName);
             // state.byId[photoId].tags = [...array.slice(0, index), ...array.slice(index + 1)];
             delete state.byId[photoId].tagsByName[tagName];
+        },
+        removePhoto: (state, photoId) => {
+            if (state.byId.hasOwnProperty(photoId) !== true) return;
+            state.allIds.splice(state.allIds.indexOf(photoId), 1);
+            delete state.byId[photoId];
         }
     },
     actions: {

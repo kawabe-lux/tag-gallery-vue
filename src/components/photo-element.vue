@@ -2,6 +2,10 @@
   <li class="photo-element">
     <figure>
       <img :src="src">
+      <button class="delete" :class="{ hidden: !editing }" label="delete photo" @click="deletePhoto">
+        <img role="presentation" src="/src/assets/svg/trash-2.svg">
+        delete
+      </button>
       <figcaption>
         <ul class="photo-tag-list" ref="photoTagList">
           <photo-tag
@@ -77,6 +81,12 @@ export default {
         });
         this.$refs.tagInput.value = "";
       }
+    },
+    deletePhoto(){
+      this.$store.commit('photos/removePhoto', this.id);
+      this.tags.forEach((tagName) => {
+        this.$store.commit('tags/removePhoto', {photoId: this.id, tagName: tagName});
+      })
     }
   },
   components: {
@@ -92,6 +102,7 @@ export default {
     border: solid var(--layout-border-width) var(--border-color);
     background-color: var(--background-color);
     margin: 1em ;
+    position: relative;
   }
   .photo-element:focus-within{
     border-color: var(--focus-color);
@@ -100,6 +111,34 @@ export default {
     display: flex;
     padding-left: 0;
     flex-wrap: wrap;
+  }
+
+  button.delete{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--shadow-color-alpha);
+    color: var(--text-color);
+    margin: 1rem;
+    width: 17rem;
+    height: 17rem;
+    opacity: 0.7;
+    transition-duration: 0.15s;
+    transition-property: opacity, visibility;
+    border: none;
+  }
+  button.delete.hidden{
+    opacity: 0;
+    visibility: hidden;
+  }
+  button.delete>img{
+    filter: invert();
+    opacity: 0.7;
+  }
+
+  button.delete:focus-within,
+  button.delete:hover{
+    opacity: 1;
   }
 
   .edit-button{
@@ -188,7 +227,6 @@ export default {
   .edit.add-tag{
     display: block;
   }
-
 
   figure{
     margin: 1em;
