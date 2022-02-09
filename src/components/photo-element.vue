@@ -17,9 +17,9 @@
             :buttonlabel="editing ? 'filter by ' : 'remove '"
           />
           <li class="add-tag" :class="{ edit: editing }" @click="$nextTick(() => ($refs.tagInput.focus()))">
-            <form action="preventDefault()">
+            <form>
               <input ref="tagInput" type="text" size="1" placeholder="tag name">
-              <button type="submit" @click="addTag">+</button><!-- ; $nextTick(() => ($refs.tagInput.focus())) -->
+              <button type="submit" @click="addTag"><img src="/src/assets/svg/plus.svg" alt=""></button>
             </form>
           </li>
         </ul>
