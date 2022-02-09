@@ -2,42 +2,42 @@
   <li class="photo-element" :class="{idle: photoStatus == 0, ready: photoStatus == 1, uploading: photoStatus == 2, done: photoStatus == 3}">
     <figure>
       <img :src="src">
-      <button class="delete" :class="{ hidden: !editing }" label="delete photo" @click="deletePhoto">
-        <img role="presentation" src="/src/assets/svg/trash-2.svg">
-        delete
-      </button>
+      <form>
+        <label for="upload-input">
+          <img role="presentation" ref="photoPreview" src="/src/assets/svg/image.svg">
+          <span>{{ photoStatus == 0 ? 'upload file' : (photoStatus == 1 ? 'change file' : '') }}</span>
+          <input ref="fileInput" id="upload-input" type="file" v-on:change="setPreview">
+        </label>
+        <button ref="fileSubmit" type="submit" @click="startUpload"><img src="/src/assets/svg/upload.svg"> upload</button>
+      </form>
       <figcaption>
         <ul class="photo-tag-list" ref="photoTagList">
           <photo-tag
             v-for="tag in tags"
             :key="tag"
             :tag="tag"
-            :class="{ edit: editing }"
-            @click="actionTag(tag)"
-            :buttonlabel="editing ? 'filter by ' : 'remove '"
+            class="edit"
+            @click="removeTag(tag)"
+            :buttonlabel="'remove '"
           />
-          <li class="add-tag" :class="{ edit: editing }" @click="$nextTick(() => ($refs.tagInput.focus()))">
+          <li class="add-tag edit" @click="$nextTick(() => ($refs.tagInput.focus()))">
             <form>
               <input ref="tagInput" type="text" size="1" placeholder="tag name">
-              <button type="submit" @click="addTag"><img src="/src/assets/svg/plus.svg" alt=""></button>
+              <button type="submit" @click="addTag"><img src="/src/assets/svg/plus.svg" alt=""></button><!-- ; $nextTick(() => ($refs.tagInput.focus())) -->
             </form>
           </li>
         </ul>
       </figcaption>
     </figure>
-    <button class="edit-button" :class="{ edit: editing }" @click="toggleEditing">{{ editing ? 'done' : 'edit'}}</button>
   </li>
 </template>
 
 <script>
 import PhotoTag from './photo-tag.vue'
-// import { useStore } from 'vuex'
-
-// const store = useStore()
-// console.log(store)
+import pStatus from '../store/modules/photoStatus'
 
 export default {
-  name: 'PhotoElement',
+  name: 'NewPhotoElement',
   props: {
     src: {
       type: String,
@@ -45,7 +45,7 @@ export default {
     },
     tags: {
       type: Array,
-      default: () => ([{ id: uuid4(), name: 'test' }])
+      default: () => ([])
     },
     id: {
       type: String,
@@ -57,22 +57,29 @@ export default {
     },
   },
   data: () => ({
-    editing: false
+    editing: true
   }),
   methods: {
-    toggleEditing () {
-      this.editing = !this.editing
-      if (this.editing){
-        this.$refs.photoTagList.focus()
-      }
+    setPreview () {
+      console.log(window.URL.createObjectURL(this.$refs.fileInput.files[0]))
+      this.$refs.photoPreview.src = window.URL.createObjectURL(this.$refs.fileInput.files[0]);
+      this.$store.commit('photos/setStatus', {photoId: this.id, status: pStatus.READY});
     },
-    actionTag (tagName) {
-      if (this.editing){
+    startUpload (event) {
+      event.preventDefault();
+      console.log('startUpload');
+      this.$store.commit('photos/setStatus', {photoId: this.id, status: pStatus.UPLOADING});
+      this.$store.commit('photos/setSrc', {
+        photoId: this.id,
+        src: window.URL.createObjectURL(this.$refs.fileInput.files[0])
+      });
+      this.$store.commit('photos/addNew');
+    },
+    removeTag (tagName) {
         // remove tag
         console.log(tagName);
         this.$store.commit('photos/removeTag', {photoId: this.id, tagName: tagName});
         this.$store.commit('tags/removePhoto', {photoId: this.id, tagName: tagName});
-      }
     },
     addTag (event) {
       event.preventDefault();
@@ -85,12 +92,6 @@ export default {
         });
         this.$refs.tagInput.value = "";
       }
-    },
-    deletePhoto(){
-      this.$store.commit('photos/removePhoto', this.id);
-      this.tags.forEach((tagName) => {
-        this.$store.commit('tags/removePhoto', {photoId: this.id, tagName: tagName});
-      })
     }
   },
   components: {
@@ -117,7 +118,8 @@ export default {
     flex-wrap: wrap;
   }
 
-  .photo-element.uploading>figure>img{
+  .photo-element.ready>figure>img,
+  .photo-element.idle>figure>img{
     display: none;
   }
 
@@ -230,7 +232,7 @@ export default {
   .add-tag:focus-within input{
     background-color: var(--text-color);
     width: 7rem;
-    padding: 0.5rem 0.5rem 0.5rem 0.8em;
+    padding: 0.5rem 0.5rem 0.5rem 0.8rem;
     margin: 0 0.5rem 0 0;
   }
   .add-tag:focus-within button{
@@ -246,14 +248,108 @@ export default {
   }
 
   figure{
-    margin: 1rem;
-    width: 17rem;
+    margin: 1em;
+    width: 17em;
   }
 
   figure>img{
-    width: 17rem;
-    height: 17rem;
+    width: 17em;
+    height: 17em;
     object-fit: cover;
     margin: 0 0 1rem 0;
   }
+
+  .photo-element>figure>form{
+    width: 17rem;
+    height: 17rem;
+    margin: 0 0 1rem 0;
+    display: block;
+    position: relative;
+  }
+  .photo-element>figure>form>label{
+    display: block;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    transition-property: outline, box-shadow;
+    transition-duration: 0.15s;
+  }
+  .photo-element.ready>figure>form>label{
+    height: 12.75rem;
+    width: 12.75rem;
+    margin-bottom: 1rem;
+    margin-left: 2.125rem;
+  }
+  .photo-element>figure>form>label:focus-within{
+    outline-style: solid;
+    outline-color: var(--focus-color);
+    outline-width: 0.2rem;
+  }
+  .photo-element>figure>form>label:hover{
+    box-shadow: 2px 2px var(--focus-color);
+  }
+  .photo-element.idle>figure>form>label>img{
+    display: block;
+    width: 34%;
+    height: 34%;
+    padding: 33% 33% 4% 33%;
+    text-align: center;
+  }
+  .photo-element.ready>figure>form>label>img{
+    display: block;
+    width: 12.75rem;
+    height: 12.75rem;
+    padding-bottom: 5%;
+    text-align: center;
+    object-fit: cover;
+  }
+  .photo-element.ready>figure>form>label>span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 2.125rem;
+    top: 0;
+    width: 12.75rem;
+    height: 12.75rem;
+    opacity: 0;
+    background-color: var(--shadow-color-alpha);
+  }
+  .photo-element.ready>figure>form>label:focus-within>span,
+  .photo-element.ready>figure>form>label:hover>span{
+    opacity: 1;
+  }
+
+  .photo-element>figure>form>label>input[type="file"]{
+    display: none;
+    position: absolute;
+    width: 17rem;
+    height: 17rem;
+    top: 0;
+    left: 0;
+    text-align: center;
+    overflow: hidden;
+    opacity: 0;
+  }
+  .photo-element.idle>figure>form>label>input[type="file"],
+  .photo-element.ready>figure>form>label>input[type="file"]{
+    display: block;
+  }
+  .photo-element.ready>figure>form>label>input[type="file"]{
+    height: 12.75rem;
+    width: 12.75rem;
+    left: 2.125rem;
+  }
+  .photo-element>figure>form>button[type="submit"]{
+    display: none;
+    width: 17rem;
+    height: 3.4rem;
+    text-align: center;
+    overflow: hidden;
+
+  }
+  .photo-element.ready>figure>form>button[type="submit"]{
+    display: block;
+  }
+
 </style>

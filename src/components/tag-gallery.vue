@@ -4,8 +4,16 @@
       v-for="photo in photoSet"
       :key="photo.id"
       :tags="photo.tags"
+      :photoStatus="photo.status"
       :src="photo.src"
       :id="photo.id"
+    />
+    <new-photo-element 
+      :key="newPhoto.id"
+      :tags="newPhoto.tags"
+      :photoStatus="newPhoto.status"
+      :src="newPhoto.src"
+      :id="newPhoto.id"
     />
   </ul>
 </template>
@@ -14,11 +22,17 @@
   import { computed } from 'vue'
   import { useStore } from 'vuex'
   import PhotoElement from './photo-element.vue'
+  import NewPhotoElement from './new-photo-element.vue'
+
   const store = useStore()
   store.dispatch('photos/load', null, { root: true })
+  const newPhoto = computed(() => {
+    return store.getters['photos/newPhoto']
+  })
   const photoSet = computed (() => {
     return store.getters['photos/photoSet']
   })
+  store.commit('photos/addNew');
 
 </script>
 
