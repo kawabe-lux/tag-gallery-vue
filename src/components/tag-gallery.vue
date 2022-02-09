@@ -5,6 +5,7 @@
       :key="photo.id"
       :tags="photo.tags"
       :src="photo.src"
+      :id="photo.id"
     />
   </ul>
 </template>
@@ -16,7 +17,6 @@
   const store = useStore()
   store.dispatch('photos/load', null, { root: true })
   const photoSet = computed (() => {
-    console.log(store.getters['photos/photoSet']);
     return store.getters['photos/photoSet']
   })
 

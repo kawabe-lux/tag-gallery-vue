@@ -47,6 +47,7 @@
     --background-color-light: #fafafa;
     --inner-background-color-light: #d4d4d4;
     --shadow-color-light: #273445;
+    --shadow-color-alpha-light: #27344580;
     --light-color-light: #efede7;
     --image-filter-light: ;
     --font-weight-light: 400;
@@ -62,6 +63,7 @@
     --background-color-dark: #333333;
     --inner-background-color-dark: #1a1a1a;
     --shadow-color-dark: #000;
+    --shadow-color-alpha-dark: #00000080;
     --light-color-dark: #202020;
     --image-filter-dark: brightness(.8) contrast(1.2);
     --font-weight-dark: 350;
@@ -78,6 +80,7 @@
     --background-color: var(--background-color-light);
     --inner-background-color: var(--inner-background-color-light);
     --shadow-color: var(--shadow-color-light);
+    --shadow-color-alpha: var(--shadow-color-alpha-light);
     --light-color: var(--light-color-light);
     --image-filter: var(--image-filter-light);
     --font-weight: var(--font-weight-light);
@@ -94,6 +97,7 @@
         --background-color: var(--background-color-dark);
         --inner-background-color: var(--inner-background-color-dark);
         --shadow-color: var(--shadow-color-dark);
+        --shadow-color-alpha: var(--shadow-color-alpha-dark);
         --light-color: var(--light-color-dark);
         --image-filter: var(--image-filter-dark);
         --font-weight: var(--font-weight-dark);
@@ -109,6 +113,7 @@
     --background-color: var(--background-color-dark);
     --inner-background-color: var(--inner-background-color-dark);
     --shadow-color: var(--shadow-color-dark);
+    --shadow-color-alpha: var(--shadow-color-alpha-dark);
     --light-color: var(--light-color-dark);
     --image-filter: var(--image-filter-dark);
     --font-weight: var(--font-weight-dark);

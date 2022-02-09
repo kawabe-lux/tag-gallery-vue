@@ -8,19 +8,30 @@ export default{
         tagSet: (state) => state.allTags.map( tagId => state.byTag[tagId] ),
     },
     mutations: {
-        add: (state, item) => {
-            if (state.byTag.hasOwnProperty(item.tag.name) == false){
-                state.byTag[item.tag.name] = item.tag;
-                console.log(item.tag);
+        add: (state, {tagName: tagName, photoId: photoId}) => {
+            if (state.byTag.hasOwnProperty(tagName) !== true){
+                state.byTag[tagName] = {name: tagName};
+                console.log(state.byTag[tagName]);
             }
-            if (state.byTag[item.tag.name].hasOwnProperty('photos') == false){
-                state.byTag[item.tag.name].photos = {};
+            if (state.byTag[tagName].hasOwnProperty('photos') !== true){
+                state.byTag[tagName].photos = {};
             }
-            if (state.byTag[item.tag.name].photos.hasOwnProperty(item.photoId) == false){
-                state.byTag[item.tag.name].photos[item.photoId] = true;
+            if (state.byTag[tagName].photos.hasOwnProperty(photoId) !== true){
+                state.byTag[tagName].photos[photoId] = true;
             }
-            if (state.allTags.includes(item.tag.name)) return;
-            state.allTags.push(item.tag.name);
+            if (state.allTags.includes(tagName)) return;
+            state.allTags.push(tagName);
+        },
+        removePhoto: (state, {tagName: tagName, photoId: photoId}) => {
+            if (state.byTag.hasOwnProperty(tagName) !== true) return;
+            if (state.byTag[tagName].hasOwnProperty('photos') !== true) return;
+            if (state.byTag[tagName].photos.hasOwnProperty(photoId) !== true) return;
+            delete state.byTag[tagName].photos[photoId];
+            if (Object.keys(state.byTag[tagName].photos).length === 0){
+                delete state.byTag[tagName];
+                state.allTags.splice(state.allTags.indexOf(tagName), 1);
+            }
+
         }
     },
 }

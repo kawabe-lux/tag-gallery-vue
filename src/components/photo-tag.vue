@@ -3,10 +3,9 @@
     <button
       ref="nameButton"
       class="name"
-      @click="openMenu"
+      :label="`${buttonlabel}${tag}`"
     >
-    <span class="delete-indicator">–</span>
-      {{ tag.name }}
+    <img src="/src/assets/svg/x.svg" class="delete-indicator">{{ tag }}
     </button>
   </li>
 </template>
@@ -16,7 +15,11 @@ export default{
   name: 'PhotoTag',
   props: {
     tag: {
-      type: Object,
+      type: String,
+      required: true
+    },
+    buttonlabel: {
+      type: String,
       required: true
     }
   }
@@ -30,27 +33,33 @@ export default{
   }
   .photo-tag button{
     text-transform: none;
-    padding: 0.5em 0.8em 0.5em 0.2em;
+    padding: 0.5em 0.5em 0.5em 0.5em;
     margin: 0 0.5em 0.5em 0;
-  }
-  .photo-tag>button.name{
     min-width: 42px;
     min-height: 42px;
     box-sizing: border-box;
-    background-color: var(--inner-background-color);
     border: none;
+  }
+  .photo-tag>button.name{
+    background-color: var(--inner-background-color);
     color: var(--text-color);
   }
   .delete-indicator{
     opacity: 0;
+    display: inline-block;
+    height: 1.5em;
+    width: 0;
+    margin-bottom: -0.35em;
+    transition-duration: 0.15s;
+    transition-property: width;
   }
 
   .edit.photo-tag>button.name{
     background-color: var(--warn-background-color);
     color: var(--warn-text-color);
-    padding: 0.5em 0.5em 0.5em 0.5em;
   }
   .edit .delete-indicator{
     opacity: 0.8;
+    width: 1.5em;
   }
 </style>

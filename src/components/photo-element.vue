@@ -6,14 +6,17 @@
         <ul class="photo-tag-list" ref="photoTagList">
           <photo-tag
             v-for="tag in tags"
-            :key="tag.name"
+            :key="tag"
             :tag="tag"
-            @destroy="removeTag"
             :class="{ edit: editing }"
+            @click="actionTag(tag)"
+            :buttonlabel="editing ? 'filter by ' : 'remove '"
           />
           <li class="add-tag" :class="{ edit: editing }" @click="$nextTick(() => ($refs.tagInput.focus()))">
-            <input ref="tagInput" type="text" size="1">
-            <button type="submit" @click="$nextTick(() => ($refs.tagInput.focus()))">+</button>
+            <form action="preventDefault()">
+              <input ref="tagInput" type="text" size="1" placeholder="tag name">
+              <button type="submit" @click="addTag">+</button><!-- ; $nextTick(() => ($refs.tagInput.focus())) -->
+            </form>
           </li>
         </ul>
       </figcaption>
@@ -24,6 +27,10 @@
 
 <script>
 import PhotoTag from './photo-tag.vue'
+// import { useStore } from 'vuex'
+
+// const store = useStore()
+// console.log(store)
 
 export default {
   name: 'PhotoElement',
@@ -35,7 +42,11 @@ export default {
     tags: {
       type: Array,
       default: () => ([{ id: uuid4(), name: 'test' }])
-    }
+    },
+    id: {
+      type: String,
+      required: true
+    },
   },
   data: () => ({
     editing: false
@@ -47,12 +58,26 @@ export default {
         this.$refs.photoTagList.focus()
       }
     },
-    removeTag (event) {
-      const index = this.tags.indexOf(event)
-      this.$delete(this.tags, index)
-    }/*,
+    actionTag (tagName) {
+      if (this.editing){
+        // remove tag
+        console.log(tagName);
+        this.$store.commit('photos/removeTag', {photoId: this.id, tagName: tagName});
+        this.$store.commit('tags/removePhoto', {photoId: this.id, tagName: tagName});
+      }
+    },
     addTag (event) {
-    }*/
+      event.preventDefault();
+      this.$nextTick(() => (this.$refs.tagInput.focus()));
+      const tagName = this.$refs.tagInput.value;
+      if (tagName.length > 0){
+        this.$store.commit('photos/addTag', {photoId: this.id, tagName: tagName});
+        this.$store.commit('tags/add', {tagName: tagName, photoId: this.id}, {
+          root: true,
+        });
+        this.$refs.tagInput.value = "";
+      }
+    }
   },
   components: {
     PhotoTag
@@ -102,11 +127,15 @@ export default {
     height: 42px;
     background-color: var(--inner-background-color);
     overflow: hidden;
-    flex-direction: row;
-    margin-right: 10em;
+    margin-right: 7rem;
   }
 
-  .add-tag>input{
+  li.add-tag>form{
+    display: flex;
+    flex-direction: row;
+  }
+
+  .add-tag input{
     display: block;
     color: var(--background-color);
     background-color: var(--text-color);
@@ -123,10 +152,10 @@ export default {
     width: 0;
     box-sizing: border-box;
   }
-  .add-tag>input:hover{
+  .add-tag input:hover{
     filter: drop-shadow( 2px 2px var(--focus-color));
   }
-  .add-tag>button{
+  .add-tag button{
     color: var(--background-color);
     background-color: var(--inner-background-color);
     border: none;
@@ -145,19 +174,19 @@ export default {
     margin-right: 0;
   }
 
-  .add-tag:focus-within>input{
+  .add-tag:focus-within input{
     background-color: var(--text-color);
-    width: 10em;
+    width: 7rem;
     padding: 0.5em 0.5em 0.5em 0.8em;
     margin: 0 0.5em 0 0;
   }
-  .add-tag:focus-within>button{
+  .add-tag:focus-within button{
     background-color: var(--text-color);
   }
 
 
   .edit.add-tag{
-    display: flex;
+    display: block;
   }
 
 
