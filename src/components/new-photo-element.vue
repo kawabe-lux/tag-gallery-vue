@@ -9,11 +9,11 @@
     <figure>
       <form>
         <label for="upload-input">
-          <img role="presentation" ref="photoPreview" src="/src/assets/svg/image.svg">
-          <span>{{ photoStatus == 0 ? 'upload file' : (photoStatus == 1 ? 'change file' : '') }}</span>
+          <img role="presentation" ref="photoPreview" :src="srcPreview.length == 0 ? '/src/assets/svg/image.svg' : srcPreview">
+          <span>{{ photoStatus == 0 ? 'upload file' : (photoStatus == 1 || photoStatus == 4 ? 'change file' : '') }}</span>
           <input ref="fileInput" id="upload-input" type="file" v-on:change="setPreview">
         </label>
-        <button ref="fileSubmit" type="submit" @click="startUpload"><img src="/src/assets/svg/upload.svg"> upload</button>
+        <button ref="fileSubmit" type="submit" @click="startUpload"><img src="/src/assets/svg/upload.svg"> {{ photoStatus == 1 ? 'upload' : 'try upload again'}}</button>
       </form>
       <figcaption>
         <ul class="photo-tag-list" ref="photoTagList">
@@ -120,8 +120,13 @@ export default {
     margin: 1em ;
     position: relative;
   }
-  .photo-element:focus-within{
+  .photo-element:focus-within,
+  .photo-element.error:focus-within{
     border-color: var(--focus-color);
+  }
+  .photo-element.error{
+    background-color: var(--warn-background-color);
+    border: dashed calc(var(--layout-border-width)*2) var(--border-color);
   }
   .photo-tag-list{
     display: flex;
@@ -130,6 +135,7 @@ export default {
   }
 
   .photo-element.ready>figure>img,
+  .photo-element.error>figure>img,
   .photo-element.idle>figure>img{
     display: none;
   }
@@ -288,7 +294,8 @@ export default {
     border-radius: var(--interactives-border-width);
     font-weight: bold;
   }
-  .photo-element.ready>figure>form>label{
+  .photo-element.ready>figure>form>label,
+  .photo-element.error>figure>form>label{
     height: 12.75rem;
     width: 12.75rem;
     margin-bottom: 1rem;
@@ -309,7 +316,8 @@ export default {
     padding: 33% 33% 4% 33%;
     text-align: center;
   }
-  .photo-element.ready>figure>form>label>img{
+  .photo-element.ready>figure>form>label>img,
+  .photo-element.error>figure>form>label>img{
     display: block;
     width: 12.75rem;
     height: 12.75rem;
@@ -317,7 +325,8 @@ export default {
     text-align: center;
     object-fit: cover;
   }
-  .photo-element.ready>figure>form>label>span{
+  .photo-element.ready>figure>form>label>span,
+  .photo-element.error>figure>form>label>span{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -330,7 +339,9 @@ export default {
     background-color: var(--shadow-color-alpha);
   }
   .photo-element.ready>figure>form>label:focus-within>span,
-  .photo-element.ready>figure>form>label:hover>span{
+  .photo-element.ready>figure>form>label:hover>span,
+  .photo-element.error>figure>form>label:focus-within>span,
+  .photo-element.error>figure>form>label:hover>span{
     opacity: 1;
   }
 
@@ -346,10 +357,12 @@ export default {
     opacity: 0;
   }
   .photo-element.idle>figure>form>label>input[type="file"],
+  .photo-element.error>figure>form>label>input[type="file"],
   .photo-element.ready>figure>form>label>input[type="file"]{
     display: block;
   }
-  .photo-element.ready>figure>form>label>input[type="file"]{
+  .photo-element.ready>figure>form>label>input[type="file"],
+  .photo-element.error>figure>form>label>input[type="file"]{
     height: 12.75rem;
     width: 12.75rem;
     left: 2.125rem;
@@ -362,7 +375,8 @@ export default {
     overflow: hidden;
 
   }
-  .photo-element.ready>figure>form>button[type="submit"]{
+  .photo-element.ready>figure>form>button[type="submit"],
+  .photo-element.error>figure>form>button[type="submit"]{
     display: block;
   }
 

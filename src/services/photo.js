@@ -42,13 +42,13 @@ export default{
     upload: function (src, photoID, onSuccess, onError) {
         console.log(`start upload... src: ${src}`);
         setTimeout(function() {
-            if ( (Math.random()*100-90) < 90 ){
+            if ( (Math.random()*100) < 90 ){
                 console.log('success!');
                 onSuccess(src, photoID);
             }else{
                 console.log('error!');
                 onError(photoID, 'random Error');
             }
-        }, (Math.random()*(5 - 2) + 2)*1000 );
+        }, (Math.random()*(5 - 2) + 2)*10000 );
     }
 }

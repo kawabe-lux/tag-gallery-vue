@@ -9,14 +9,34 @@ export default{
         // allIds lists all photos **without** newPhoto
         allIds: [],
         // newPhotoId is ID of new photo not being uploading
-        newPhotoId: ''
+        newPhotoId: '',
+        selectedTagSet: []
     }),
     getters: {
-        photoSet: (state) => state.allIds.map( photoId => state.byId[photoId] ),
+        photoSet: (state) => {
+            const set = state.allIds.map( photoId => state.byId[photoId] ).filter(
+                // photo => photo.status == pStatus.DONE
+                photo => [pStatus.DONE, pStatus.UPLOADING].includes(photo.status)
+            );
+            if (state.selectedTagSet.length == 0){
+                return set;
+            } else {
+                return set.filter(photo => {
+                    for (var i = state.selectedTagSet.length - 1; i >= 0; i--) {
+                        if (photo.tags.includes(state.selectedTagSet[i]) == false){
+                            return false
+                        }
+                    }
+                    return true
+                });
+            }
+        },
         newPhoto: (state) => [
-            state.byId[state.newPhotoId], 
-            ...state.allIds.map( photoId => state.byId[photoId] ).filter(photo => photo.status < pStatus.UPLOADING)
-        ],
+            ...((state.allIds.map( photoId => state.byId[photoId] )).filter(
+                photo => photo.status == pStatus.ERROR
+            )),
+            state.byId[state.newPhotoId] 
+        ]
     },
     mutations: {
         add: (state, photo) => {
@@ -55,11 +75,6 @@ export default{
                 case pStatus.UPLOADING:
                     state.allIds.push(photo.id);
                     break;
-                case pStatus.ERROR:
-                    const index = state.allIds.indexOf(photo.id);
-                    if (index > -1){
-                        state.allIds.splice(index, 1);
-                    }
             }
             photo.status = status;
         },
@@ -76,7 +91,10 @@ export default{
         },
         removeTag: (state, {photoId: photoId, tagName: tagName}) => {
             if (state.byId[photoId].tagsByName.hasOwnProperty(tagName) !== true) return;
-            state.byId[photoId].tags.splice(state.byId[photoId].tags.indexOf(tagName), 1);
+            const index = state.byId[photoId].tags.indexOf(tagName);
+            if (index > -1) {
+                state.byId[photoId].tags.splice(index, 1);
+            }
             // const array = state.byId[photoId].tags;
             // const index = state.byId[photoId].tags.indexOf(tagName);
             // state.byId[photoId].tags = [...array.slice(0, index), ...array.slice(index + 1)];
@@ -84,9 +102,22 @@ export default{
         },
         removePhoto: (state, photoId) => {
             if (state.byId.hasOwnProperty(photoId) !== true) return;
-            state.allIds.splice(state.allIds.indexOf(photoId), 1);
-            delete state.byId[photoId];
-        }
+            const index = state.allIds.indexOf(photoId);
+            if (index > -1) {
+                state.allIds.splice(index, 1);
+                delete state.byId[photoId];
+            }
+        },
+        selectTag: (state, tagName) => {
+            if (state.selectedTagSet.includes(tagName)) return;
+            state.selectedTagSet.push(tagName);
+        },
+        deselectTag: (state, tagName) => {
+            const index = state.selectedTagSet.indexOf(tagName);
+            if (index > -1) {
+                state.selectedTagSet.splice(index, 1);
+            }
+        },
     },
     actions: {
         load: async ({ commit }) => {
