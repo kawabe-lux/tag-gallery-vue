@@ -1,7 +1,18 @@
 <template>
-  <li class="photo-element" :class="{idle: photoStatus == 0, ready: photoStatus == 1, uploading: photoStatus == 2, done: photoStatus == 3}">
+  <li class="photo-element" :class="{
+    idle: photoStatus == 0,
+    ready: photoStatus == 1,
+    uploading: photoStatus == 2,
+    done: photoStatus == 3,
+    error: photoStatus == 4
+  }">
     <figure>
-      <img :src="src">
+      <img class="photo-img" :src="src">
+      <img role="presentation" v-if="photoStatus == 2 && srcPreview.length > 0" class="preview-img" :src="srcPreview">
+      <div v-if="photoStatus == 2" class="upload-note">
+        <img role="presentation" src="/src/assets/svg/chevrons-up.svg" alt="">
+        <span>uploading...</span>
+      </div>
       <button class="delete" :class="{ hidden: !editing }" label="delete photo" @click="deletePhoto">
         <img role="presentation" src="/src/assets/svg/trash-2.svg">
         delete
@@ -42,6 +53,10 @@ export default {
     src: {
       type: String,
       required: true
+    },
+    srcPreview: {
+      type: String,
+      default: () => ('')
     },
     tags: {
       type: Array,
@@ -87,10 +102,10 @@ export default {
       }
     },
     deletePhoto(){
-      this.$store.commit('photos/removePhoto', this.id);
-      this.tags.forEach((tagName) => {
-        this.$store.commit('tags/removePhoto', {photoId: this.id, tagName: tagName});
-      })
+        this.$store.commit('photos/removePhoto', this.id);
+        this.tags.forEach((tagName) => {
+          this.$store.commit('tags/removePhoto', {photoId: this.id, tagName: tagName});
+        })
     }
   },
   components: {
@@ -117,7 +132,7 @@ export default {
     flex-wrap: wrap;
   }
 
-  .photo-element.uploading>figure>img{
+  .photo-element.uploading>figure>img.photo-img{
     display: none;
   }
 
@@ -255,5 +270,45 @@ export default {
     height: 17rem;
     object-fit: cover;
     margin: 0 0 1rem 0;
+  }
+
+  .upload-note{
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 15rem;
+    height: 15rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--shadow-color-alpha);
+  }
+
+  .upload-note img{
+    filter: invert();
+    animation-name: upload-anim;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    margin-bottom: 1em;
+    width: 2em;
+  }
+  .upload-note span{
+    background-color: var(--shadow-color-alpha);
+    padding: 0.5em;
+    border-radius: 10em;
+  }
+
+  @keyframes upload-anim{
+    0%{
+      transform: translateY(0);
+    }
+    5%{
+      transform: translateY(-0.25em);
+    }
+    60%{
+      transform: translateY(0);
+    }
   }
 </style>

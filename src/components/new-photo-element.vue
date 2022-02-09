@@ -1,7 +1,12 @@
 <template>
-  <li class="photo-element" :class="{idle: photoStatus == 0, ready: photoStatus == 1, uploading: photoStatus == 2, done: photoStatus == 3}">
+  <li class="photo-element" :class="{
+    idle: photoStatus == 0, 
+    ready: photoStatus == 1, 
+    uploading: photoStatus == 2, 
+    done: photoStatus == 3, 
+    error: photoStatus == 4
+  }">
     <figure>
-      <img :src="src">
       <form>
         <label for="upload-input">
           <img role="presentation" ref="photoPreview" src="/src/assets/svg/image.svg">
@@ -43,6 +48,10 @@ export default {
       type: String,
       required: true
     },
+    srcPreview: {
+      type: String,
+      default: () => ('')
+    },
     tags: {
       type: Array,
       default: () => ([])
@@ -62,17 +71,19 @@ export default {
   methods: {
     setPreview () {
       console.log(window.URL.createObjectURL(this.$refs.fileInput.files[0]))
-      this.$refs.photoPreview.src = window.URL.createObjectURL(this.$refs.fileInput.files[0]);
+      const previewSrc = window.URL.createObjectURL(this.$refs.fileInput.files[0]);
+      this.$refs.photoPreview.src = previewSrc;
+      this.$store.commit('photos/setSrcPreview', {
+        photoId: this.id,
+        srcPreview: previewSrc
+      });
       this.$store.commit('photos/setStatus', {photoId: this.id, status: pStatus.READY});
     },
     startUpload (event) {
       event.preventDefault();
       console.log('startUpload');
+      this.$store.dispatch('photos/uploadPhoto', {photoId: this.id, src: this.srcPreview});
       this.$store.commit('photos/setStatus', {photoId: this.id, status: pStatus.UPLOADING});
-      this.$store.commit('photos/setSrc', {
-        photoId: this.id,
-        src: window.URL.createObjectURL(this.$refs.fileInput.files[0])
-      });
       this.$store.commit('photos/addNew');
     },
     removeTag (tagName) {
@@ -273,6 +284,9 @@ export default {
     height: 100%;
     transition-property: outline, box-shadow;
     transition-duration: 0.15s;
+    background-color: var(--inner-background-color);
+    border-radius: var(--interactives-border-width);
+    font-weight: bold;
   }
   .photo-element.ready>figure>form>label{
     height: 12.75rem;

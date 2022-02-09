@@ -13,7 +13,10 @@ export default{
     }),
     getters: {
         photoSet: (state) => state.allIds.map( photoId => state.byId[photoId] ),
-        newPhoto: (state) => state.byId[state.newPhotoId],
+        newPhoto: (state) => [
+            state.byId[state.newPhotoId], 
+            ...state.allIds.map( photoId => state.byId[photoId] ).filter(photo => photo.status < pStatus.UPLOADING)
+        ],
     },
     mutations: {
         add: (state, photo) => {
@@ -21,6 +24,7 @@ export default{
             if (state.allIds.includes(photo.id)) return;
             state.byId[photo.id].tagsByName = {};
             state.byId[photo.id].status = pStatus.DONE;
+            state.byId[photo.id].srcPreview = '';
             state.byId[photo.id].tags.forEach((tag) => {
                 state.byId[photo.id].tagsByName[tag] = true;
             });
@@ -34,6 +38,7 @@ export default{
                 tags: [],
                 tagsByName: {},
                 src: '',
+                srcPreview: '/src/assets/svg/image.svg',
             }
             state.byId[photo.id] = photo;
             state.newPhotoId = photo.id;
@@ -42,19 +47,27 @@ export default{
             console.log(photoID);
             console.log(state.byId[photoID]);
             const photo = state.byId[photoID];
-            if (photo.status != status - 1) {
-                console.log(`photo.status: ${photo.status}, status: ${status}`);
+            if (photo.status != status - 1 && status != pStatus.ERROR) {
+                console.error(`photo.status: ${photo.status}, status: ${status}`);
                 return;
             }
             switch (status) {
                 case pStatus.UPLOADING:
                     state.allIds.push(photo.id);
                     break;
+                case pStatus.ERROR:
+                    const index = state.allIds.indexOf(photo.id);
+                    if (index > -1){
+                        state.allIds.splice(index, 1);
+                    }
             }
             photo.status = status;
         },
         setSrc: (state, {photoId: photoID, src: src}) => {
             state.byId[photoID].src = src;
+        },
+        setSrcPreview: (state, {photoId: photoID, srcPreview: srcPreview}) => {
+            state.byId[photoID].srcPreview = srcPreview;
         },
         addTag: (state, {photoId: photoId, tagName: tagName}) => {
             if (state.byId[photoId].tagsByName.hasOwnProperty(tagName)) return;
@@ -86,6 +99,15 @@ export default{
                     });
                 })
             })
+        },
+        uploadPhoto: async ({ commit }, {photoId: photoID, src: src}) => {
+            photoService.upload(src, photoID, (uploadedSrc, photoID) => {
+                commit('setSrc', {photoId: photoID, src: uploadedSrc});
+                commit('setStatus', {photoId: photoID, status: pStatus.DONE});
+            }, (photoID) => {
+                commit('setStatus', {photoId: photoID, status: pStatus.ERROR});
+            });
+            
         },
     },
 }

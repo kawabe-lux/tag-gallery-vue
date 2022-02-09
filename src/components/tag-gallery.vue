@@ -6,14 +6,17 @@
       :tags="photo.tags"
       :photoStatus="photo.status"
       :src="photo.src"
+      :srcPreview="photo.srcPreview"
       :id="photo.id"
     />
     <new-photo-element 
-      :key="newPhoto.id"
-      :tags="newPhoto.tags"
-      :photoStatus="newPhoto.status"
-      :src="newPhoto.src"
-      :id="newPhoto.id"
+      v-for="photo in newPhoto"
+      :key="photo.id"
+      :tags="photo.tags"
+      :photoStatus="photo.status"
+      :src="photo.src"
+      :srcPreview="photo.srcPreview"
+      :id="photo.id"
     />
   </ul>
 </template>

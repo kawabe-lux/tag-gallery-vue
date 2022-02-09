@@ -3,4 +3,5 @@ export default {
     READY: 1,
     UPLOADING: 2,
     DONE: 3,
+    ERROR: 4,
 }
