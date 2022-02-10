@@ -67,7 +67,7 @@ export default{
             console.log(photoID);
             console.log(state.byId[photoID]);
             const photo = state.byId[photoID];
-            if (photo.status != status - 1 && status != pStatus.ERROR) {
+            if (photo.status != status - 1 && status != pStatus.ERROR && photo.status != pStatus.ERROR) {
                 console.error(`photo.status: ${photo.status}, status: ${status}`);
                 return;
             }

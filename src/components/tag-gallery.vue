@@ -1,4 +1,12 @@
 <template>
+  <h2>filter by:</h2>
+  <ul class="tag-list">
+    <select-tag 
+      v-for="tag in tagSet"
+      :key="tag.name"
+      :tag="tag.name"
+    />
+  </ul>
   <ul class="gallery">
     <photo-element
       v-for="photo in photoSet"
@@ -25,6 +33,7 @@
   import { computed } from 'vue'
   import { useStore } from 'vuex'
   import PhotoElement from './photo-element.vue'
+  import SelectTag from './select-tag.vue'
   import NewPhotoElement from './new-photo-element.vue'
 
   const store = useStore()
@@ -34,6 +43,9 @@
   })
   const photoSet = computed (() => {
     return store.getters['photos/photoSet']
+  })
+  const tagSet = computed (() => {
+    return store.getters['tags/tagSet']
   })
   store.commit('photos/addNew');
 
@@ -47,5 +59,14 @@
   background-color: var(--inner-background-color);
   padding: 1em;
   margin-left: 1em;
+}
+h2{
+  display: inline;
+  margin-left: 1em;
+}
+.tag-list{
+  display: inline-flex;
+  padding: 1em 1em 0 1em;
+  flex-wrap: wrap;
 }
 </style>

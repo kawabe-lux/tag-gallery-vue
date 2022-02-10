@@ -49,6 +49,6 @@ export default{
                 console.log('error!');
                 onError(photoID, 'random Error');
             }
-        }, (Math.random()*(5 - 2) + 2)*10000 );
+        }, (Math.random()*(5 - 2) + 2)*1000 );
     }
 }

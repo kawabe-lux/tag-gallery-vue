@@ -4,6 +4,7 @@
       ref="nameButton"
       class="name"
       :label="`${buttonlabel}${tag}`"
+      :disabled=!interactive
     >
     <img src="/src/assets/svg/x.svg" class="delete-indicator">{{ tag }}
     </button>
@@ -21,6 +22,15 @@ export default{
     buttonlabel: {
       type: String,
       required: true
+    },
+    interactive: {
+      type: Boolean,
+      required: true
+    }
+  },
+  methods: {
+    selectTag () {
+      this.$store.commit('photos/selectTag', this.tag); 
     }
   }
 }
@@ -61,5 +71,13 @@ export default{
   .edit .delete-indicator{
     opacity: 0.8;
     width: 1.5em;
+  }
+
+  button[disabled]{
+    box-shadow: none;
+    cursor: unset;
+  }
+  button[disabled]:hover{
+    box-shadow: none;
   }
 </style>

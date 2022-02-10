@@ -6,6 +6,7 @@
     done: photoStatus == 3,
     error: photoStatus == 4
   }">
+    <button class="edit-button" :class="{ edit: editing }" @click="toggleEditing">{{ editing ? 'done' : 'edit'}}</button>
     <figure>
       <img class="photo-img" :src="src">
       <img role="presentation" v-if="photoStatus == 2 && srcPreview.length > 0" class="preview-img" :src="srcPreview">
@@ -24,19 +25,19 @@
             :key="tag"
             :tag="tag"
             :class="{ edit: editing }"
-            @click="actionTag(tag)"
             :buttonlabel="editing ? 'filter by ' : 'remove '"
+            :interactive="editing"
+            @click="actionTag(tag)"
           />
           <li class="add-tag" :class="{ edit: editing }" @click="$nextTick(() => ($refs.tagInput.focus()))">
             <form>
               <input ref="tagInput" type="text" size="1" placeholder="tag name">
-              <button type="submit" @click="addTag"><img src="/src/assets/svg/plus.svg" alt=""></button>
+              <button type="submit" @click="addTag"><img src="/src/assets/svg/plus.svg" alt="" @click="$nextTick(() => ($refs.tagInput.focus()))"></button>
             </form>
           </li>
         </ul>
       </figcaption>
     </figure>
-    <button class="edit-button" :class="{ edit: editing }" @click="toggleEditing">{{ editing ? 'done' : 'edit'}}</button>
   </li>
 </template>
 
@@ -263,6 +264,7 @@ export default {
   figure{
     margin: 1rem;
     width: 17rem;
+    grid-row: 1 / 2;
   }
 
   figure>img{
@@ -289,7 +291,7 @@ export default {
   .upload-note img{
     filter: invert();
     animation-name: upload-anim;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     margin-bottom: 1em;
     width: 2em;
@@ -307,7 +309,7 @@ export default {
     5%{
       transform: translateY(-0.25em);
     }
-    60%{
+    90%{
       transform: translateY(0);
     }
   }
