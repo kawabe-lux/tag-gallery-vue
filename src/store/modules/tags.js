@@ -11,7 +11,6 @@ export default{
         add: (state, {tagName: tagName, photoId: photoId}) => {
             if (state.byTag.hasOwnProperty(tagName) !== true){
                 state.byTag[tagName] = {name: tagName};
-                console.log(state.byTag[tagName]);
             }
             if (state.byTag[tagName].hasOwnProperty('photos') !== true){
                 state.byTag[tagName].photos = {};

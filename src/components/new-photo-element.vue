@@ -28,7 +28,7 @@
           <li class="add-tag edit" @click="$nextTick(() => ($refs.tagInput.focus()))">
             <form>
               <input ref="tagInput" type="text" size="1" placeholder="tag name">
-              <button type="submit" @click="addTag"><img src="/src/assets/svg/plus.svg" alt=""></button><!-- ; $nextTick(() => ($refs.tagInput.focus())) -->
+              <button type="submit" @click="addTag"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg></button><!-- ; $nextTick(() => ($refs.tagInput.focus())) -->
             </form>
           </li>
         </ul>
@@ -70,7 +70,6 @@ export default {
   }),
   methods: {
     setPreview () {
-      console.log(window.URL.createObjectURL(this.$refs.fileInput.files[0]))
       const previewSrc = window.URL.createObjectURL(this.$refs.fileInput.files[0]);
       this.$refs.photoPreview.src = previewSrc;
       this.$store.commit('photos/setSrcPreview', {
@@ -81,14 +80,12 @@ export default {
     },
     startUpload (event) {
       event.preventDefault();
-      console.log('startUpload');
       this.$store.dispatch('photos/uploadPhoto', {photoId: this.id, src: this.srcPreview});
       this.$store.commit('photos/setStatus', {photoId: this.id, status: pStatus.UPLOADING});
       this.$store.commit('photos/addNew');
     },
     removeTag (tagName) {
         // remove tag
-        console.log(tagName);
         this.$store.commit('photos/removeTag', {photoId: this.id, tagName: tagName});
         this.$store.commit('tags/removePhoto', {photoId: this.id, tagName: tagName});
     },
@@ -222,7 +219,7 @@ export default {
     filter: drop-shadow( 2px 2px var(--focus-color));
   }
   .add-tag button{
-    color: var(--background-color);
+    color: var(--text-color);
     background-color: var(--inner-background-color);
     border: none;
     border-radius: 50em;
@@ -235,11 +232,11 @@ export default {
     width: 42px;
     height: 42px;
   }
-  .add-tag button>img{
+  .add-tag button>img,
+  .add-tag button>svg{
     width: 1em;
     height: 1em;
     margin: 0;
-    filter: invert();
   }
   li.add-tag:focus-within{
     width: unset;
@@ -254,6 +251,7 @@ export default {
   }
   .add-tag:focus-within button{
     background-color: var(--text-color);
+    color: var(--background-color);
   }
   .add-tag:focus-within button>img{
     filter: none;

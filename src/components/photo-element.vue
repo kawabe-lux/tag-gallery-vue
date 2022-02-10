@@ -43,10 +43,6 @@
 
 <script>
 import PhotoTag from './photo-tag.vue'
-// import { useStore } from 'vuex'
-
-// const store = useStore()
-// console.log(store)
 
 export default {
   name: 'PhotoElement',
@@ -85,7 +81,6 @@ export default {
     actionTag (tagName) {
       if (this.editing){
         // remove tag
-        console.log(tagName);
         this.$store.commit('photos/removeTag', {photoId: this.id, tagName: tagName});
         this.$store.commit('tags/removePhoto', {photoId: this.id, tagName: tagName});
       }
