@@ -3,13 +3,11 @@
   <tag-gallery />
   <span></span>
 </template>
-
 <script setup>
 import TagGallery from './components/tag-gallery.vue'
 </script>
-
 <style>
-  h1{
-    text-align: center;
-  }
+h1 {
+  text-align: center;
+}
 </style>

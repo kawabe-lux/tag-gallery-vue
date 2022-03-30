@@ -2,7 +2,7 @@ import photoService from '../../services/photo';
 import uuid4 from 'uuid4'
 import pStatus from './photoStatus'
 
-export default{
+export default {
     namespaced: true,
     state: () => ({
         byId: {},
@@ -14,16 +14,19 @@ export default{
     }),
     getters: {
         photoSet: (state) => {
-            const set = state.allIds.map( photoId => state.byId[photoId] ).filter(
+            const set = state.allIds.map(photoId => state.byId[photoId]).filter(
                 // photo => photo.status == pStatus.DONE
-                photo => [pStatus.DONE, pStatus.UPLOADING].includes(photo.status)
+                photo => [pStatus.DONE, pStatus.UPLOADING].includes(
+                    photo.status)
             );
-            if (state.selectedTagSet.length == 0){
+            if (state.selectedTagSet.length == 0) {
                 return set;
             } else {
                 return set.filter(photo => {
-                    for (var i = state.selectedTagSet.length - 1; i >= 0; i--) {
-                        if (photo.tags.includes(state.selectedTagSet[i]) == false){
+                    for (var i = state.selectedTagSet.length - 1; i >=
+                        0; i--) {
+                        if (photo.tags.includes(state.selectedTagSet[
+                                i]) == false) {
                             return false
                         }
                     }
@@ -32,10 +35,10 @@ export default{
             }
         },
         newPhoto: (state) => [
-            ...((state.allIds.map( photoId => state.byId[photoId] )).filter(
+            ...((state.allIds.map(photoId => state.byId[photoId])).filter(
                 photo => photo.status == pStatus.ERROR
             )),
-            state.byId[state.newPhotoId] 
+            state.byId[state.newPhotoId]
         ]
     },
     mutations: {
@@ -63,32 +66,38 @@ export default{
             state.byId[photo.id] = photo;
             state.newPhotoId = photo.id;
         },
-        setStatus: (state, {photoId: photoID, status: status}) => {
+        setStatus: (state, { photoId: photoID, status: status }) => {
             const photo = state.byId[photoID];
-            if (photo.status != status - 1 && status != pStatus.ERROR && photo.status != pStatus.ERROR) {
-                console.error(`photo.status: ${photo.status}, status: ${status}`);
+            if (photo.status != status - 1 && status != pStatus.ERROR &&
+                photo.status !=
+                pStatus.ERROR) {
+                console.error(
+                    `photo.status: ${photo.status}, status: ${status}`);
                 return;
             }
             switch (status) {
-                case pStatus.UPLOADING:
-                    state.allIds.push(photo.id);
-                    break;
+            case pStatus.UPLOADING:
+                state.allIds.push(photo.id);
+                break;
             }
             photo.status = status;
         },
-        setSrc: (state, {photoId: photoID, src: src}) => {
+        setSrc: (state, { photoId: photoID, src: src }) => {
             state.byId[photoID].src = src;
         },
-        setSrcPreview: (state, {photoId: photoID, srcPreview: srcPreview}) => {
+        setSrcPreview: (state, { photoId: photoID, srcPreview: srcPreview }) => {
             state.byId[photoID].srcPreview = srcPreview;
         },
-        addTag: (state, {photoId: photoId, tagName: tagName}) => {
-            if (state.byId[photoId].tagsByName.hasOwnProperty(tagName)) return;
+        addTag: (state, { photoId: photoId, tagName: tagName }) => {
+            if (state.byId[photoId].tagsByName.hasOwnProperty(tagName))
+                return;
             state.byId[photoId].tagsByName[tagName] = true;
             state.byId[photoId].tags.push(tagName);
         },
-        removeTag: (state, {photoId: photoId, tagName: tagName}) => {
-            if (state.byId[photoId].tagsByName.hasOwnProperty(tagName) !== true) return;
+        removeTag: (state, { photoId: photoId, tagName: tagName }) => {
+            if (state.byId[photoId].tagsByName.hasOwnProperty(tagName) !==
+                true)
+                return;
             const index = state.byId[photoId].tags.indexOf(tagName);
             if (index > -1) {
                 state.byId[photoId].tags.splice(index, 1);
@@ -123,20 +132,23 @@ export default{
             photos.forEach((item) => {
                 commit('add', item);
                 item.tags.forEach((tagName) => {
-                    commit('tags/add', {tagName: tagName, photoId: item.id}, {
+                    commit('tags/add', { tagName: tagName,
+                        photoId: item.id }, {
                         root: true,
                     });
                 })
             })
         },
-        uploadPhoto: async ({ commit }, {photoId: photoID, src: src}) => {
+        uploadPhoto: async ({ commit }, { photoId: photoID, src: src }) => {
             photoService.upload(src, photoID, (uploadedSrc, photoID) => {
-                commit('setSrc', {photoId: photoID, src: uploadedSrc});
-                commit('setStatus', {photoId: photoID, status: pStatus.DONE});
+                commit('setSrc', { photoId: photoID, src: uploadedSrc });
+                commit('setStatus', { photoId: photoID, status: pStatus
+                        .DONE });
             }, (photoID) => {
-                commit('setStatus', {photoId: photoID, status: pStatus.ERROR});
+                commit('setStatus', { photoId: photoID, status: pStatus
+                        .ERROR });
             });
-            
+
         },
     },
 }
